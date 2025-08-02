@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Monofett&family=Sono:wght@200..800&display=swap');
+
+body {
+
+    /* Color Variables */
+    --pageBackground: #1e1e2e;
+    --cardBackground: #11111b;
+    --fallbackTextColor: #cdd6f4;
+    --red: #f38ba8;
+    --maroon: #eba0ac;
+    --peach: #fab387;
+    --yellow: #f9e2af;
+    --green: #a6e3a1;
+    --teal: #94e2d5;
+    --sky: #89dceb;
+    --sapphire: #74c7ec;
+    --blue: #89b4fa;
+    --lavender: #b4befe;
+    --mauve: #cba6f7;
+
+    background-color: var(--pageBackground);
+    background-image: repeating-linear-gradient(
+        -45deg,
+        var(--pageBackground), var(--pageBackground) 25px,
+        var(--red) 25px, var(--red) 50px,
+        var(--pageBackground) 50px, var(--pageBackground) 75px,
+        var(--maroon) 75px, var(--maroon) 100px,
+        var(--pageBackground) 100px, var(--pageBackground) 125px,
+        var(--peach) 125px, var(--peach) 150px,
+        var(--pageBackground) 150px, var(--pageBackground) 175px,
+        var(--yellow) 175px, var(--yellow) 200px,
+        var(--pageBackground) 200px, var(--pageBackground) 225px,
+        var(--green) 225px, var(--green) 250px,
+        var(--pageBackground) 250px, var(--pageBackground) 275px,
+        var(--teal) 275px, var(--teal) 300px,
+        var(--pageBackground) 300px, var(--pageBackground) 325px,
+        var(--sky) 325px, var(--sky) 350px,
+        var(--pageBackground) 350px, var(--pageBackground) 375px,
+        var(--sapphire) 375px, var(--sapphire) 400px,
+        var(--pageBackground) 400px, var(--pageBackground) 425px,
+        var(--blue) 425px, var(--blue) 450px,
+        var(--pageBackground) 450px, var(--pageBackground) 475px,
+        var(--lavender) 475px, var(--lavender) 500px,
+        var(--pageBackground) 500px, var(--pageBackground) 525px,
+        var(--mauve) 525px, var(--mauve) 550px
+    );
+    background-attachment: fixed;
+    color: var(--fallbackTextColor);
+    padding: 1em;
+    font-family: Sono, 'Courier New', Courier, monospace;
+}
+@media (pointer:none), (pointer:coarse) {
+    body {
+        background-attachment: scroll;
+    }
+}
+
+main {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+@media screen and (min-width: 1000px) {
+    main {
+        flex-direction: row;
+    }
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+header {
+    width: fit-content;
+    margin: 1em auto;
+}
+
+section, header {
+    background-color: var(--cardBackground);
+    padding: 0 1em;
+    border: 4px solid transparent;
+    border-radius: 10px;
+}
+
+h1 {
+    font-family: Monofett, Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: 400;
+    font-size: 3em;
+    text-transform: uppercase;
+    margin: 0;
+    display: flex;
+    gap: 0.5em;
+    flex-wrap: wrap;
+}
+@media screen and (max-width: 800px) {
+    h1 {
+        font-size: 2.3em;
+    }
+}
+
+.nobr {
+    white-space: nowrap;
+}
+
+a {
+    color: inherit;
+    font-weight: bold;
+}
+#status a {
+    font-weight: 400;
+}
+.rating {
+    font-size: x-large;
+}
+
+code {
+    font-family: 'Cutive Mono', 'Courier New', Courier, monospace;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* order of homepage sections */
+#bio {
+    order: 1;
+}
+#updates {
+    order: 2;
+}
+#activity {
+    order: 3;
+}
+#reading {
+    order: 4;
+}
+#playing {
+    order: 5;
+}
+#watching {
+    order: 6;
+}
+#eating {
+    order: 7;
+}
+
+/* Color Animation */
+@keyframes colorChange {
+    0% {
+        color: var(--red);
+        border-color: var(--red);
+    }
+    10% {
+        color: var(--maroon);
+        border-color: var(--maroon);
+    }
+    20% {
+        color: var(--peach);
+        border-color: var(--peach);
+    }
+    30% {
+        color: var(--yellow);
+        border-color: var(--yellow);
+    }
+    40% {
+        color: var(--green);
+        border-color: var(--green);
+    }
+    50% {
+        color: var(--teal);
+        border-color: var(--teal);
+    }
+    60% {
+        color: var(--sky);
+        border-color: var(--sky);
+    }
+    70% {
+        color: var(--sapphire);
+        border-color: var(--sapphire);
+    }
+    80% {
+        color: var(--blue);
+        border-color: var(--blue);
+    }
+    90% {
+        color: var(--lavender);
+        border-color: var(--lavender);
+    }
+    100% {
+        color: var(--red);
+        border-color: var(--red);
+    }
+}
+section, header {
+    animation: colorChange 60s linear infinite;
+}
+
+/* h1 {
+    background: linear-gradient(
+        -45deg,
+        var(--red) 25px, var(--red) 50px,
+        var(--maroon) 75px, var(--maroon) 100px,
+        var(--peach) 125px, var(--peach) 150px,
+        var(--yellow) 175px, var(--yellow) 200px,
+        var(--green) 225px, var(--green) 250px,
+        var(--teal) 275px, var(--teal) 300px,
+        var(--sky) 325px, var(--sky) 350px,
+        var(--sapphire) 375px, var(--sapphire) 400px,
+        var(--blue) 425px, var(--blue) 450px,
+        var(--lavender) 475px, var(--lavender) 500px,
+        var(--mauve) 525px, var(--mauve) 550px
+    );
+    background-clip: text;
+    color: transparent;
+} */
