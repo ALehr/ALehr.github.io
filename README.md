@@ -1,4 +1,4 @@
-# Blog Roadmap
+# Blog Planned Features
 
 ## MVP
 
