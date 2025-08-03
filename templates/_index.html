@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <meta name="robots" content="noindex, nofollow">
+        <link rel="stylesheet" href="styles.css">
+        <title>Anthony's Little Blog</title>
+    </head>
+
+    <body>  
+        <header>
+            <h1><span class="nobr">Hi, friend !</span><span class="nobr">I'm Anthony ! &nbsp; 😄</span></h1>
+        </header>
+        
+        <main>
+            <div class="column">
+                {{homepage_sections}}
+            </div>
+            
+            <div class="column">
+                <section id="blog">
+                    <h2>✏️ Blog</h2>
+                    {{blog_posts}}
+                </section>
+            </div>
+        </main>
+
+        <script src="main.js"></script>
+    </body>
+</html>
