@@ -26,6 +26,7 @@
 
 - ☑️ update notifications for readers
   - ☑️ email notifications
-  - ☑️ badges on blog pages with "new since you last visited"
+  - ☑️ badges on homepage sections with "new since you last visited"
+  - ☑️ recently updated homepage sections bubble up to top of page (?)
 
 - ☑️ make sections collapsible (?)
