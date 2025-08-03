@@ -9,6 +9,8 @@
 
 ## After Launch
 
+- ☑️ Spotify integration
+
 - ☑️ separate blog page
   - ☑️ with filters for year and month
   - ☑️ truncate blog preview on index.html
