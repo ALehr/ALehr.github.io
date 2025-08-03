@@ -38,7 +38,7 @@ done
 
 INSERTHTML="${INSERTHTML}\n<!-- END converted .md from \/homepage_sections\/markdown\/ -->"
 
-sed "s/{{homepage_sections}}/$INSERTHTML/" ./templates/_index.html > ./static/index.html
+sed "s/{{homepage_sections}}/$INSERTHTML/" ./templates/_index.html > ./index.html
 
 
 # create blog posts
@@ -82,4 +82,4 @@ done
 INSERTHTML="<!-- BEGIN converted .md from \/blog\/markdown\/ -->\n${INSERTHTML}"
 INSERTHTML="${INSERTHTML}<!-- END converted .md from \/blog\/markdown\/ -->"
 
-sed -i "" "s/{{blog_posts}}/$INSERTHTML/" ./static/index.html
+sed -i "" "s/{{blog_posts}}/$INSERTHTML/" ./index.html

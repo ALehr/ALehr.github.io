@@ -8,4 +8,4 @@
 
 - August 2022: Moved to Massachusetts
 
-- April 14 2022: Got married! (over Zoom because of COVID 😅)
+- April 2022: Got married! (over Zoom because of COVID 😅)
