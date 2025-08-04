@@ -19,6 +19,8 @@
   - ☑️ with tags for media type
   - ☑️ html component for review format
   - ☑️ truncate review previews on index.html
+  - ☑️ GoodReads integration 
+  - ☑️ LetterBox integration 
 
 - ☑️ refactor build.sh
 
