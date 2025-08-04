@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-# create homepage sections
+# Create Homepage Sections
 
 rm ./homepage_sections/html/*
 
@@ -41,7 +41,7 @@ INSERTHTML="${INSERTHTML}\n<!-- END converted .md from \/homepage_sections\/mark
 sed "s/{{homepage_sections}}/$INSERTHTML/" ./templates/_index.html > ./index.html
 
 
-# create blog posts
+# Create Blog Posts
 
 rm ./blog/html/*
 
@@ -54,7 +54,7 @@ for file in ./blog/markdown/*.md; do
     ARTICLETITLE=$(basename "$file" .md)
     echo "<article id=\"$ARTICLETITLE\">" > $NEWFILE
     ARTICLETITLE=$(date -jf %F $ARTICLETITLE '+%A %-d %B %Y')
-    echo "<h3>$ARTICLETITLE</h3>" >> $NEWFILE
+    echo "<h2>$ARTICLETITLE</h2>" >> $NEWFILE
     pandoc $file -f gfm -t HTML >> $NEWFILE
     echo "</article>" >> $NEWFILE
 
@@ -82,4 +82,6 @@ done
 INSERTHTML="<!-- BEGIN converted .md from \/blog\/markdown\/ -->\n${INSERTHTML}"
 INSERTHTML="${INSERTHTML}<!-- END converted .md from \/blog\/markdown\/ -->"
 
-sed -i "" "s/{{blog_posts}}/$INSERTHTML/" ./index.html
+sed "s/{{blog_posts}}/$INSERTHTML/" ./templates/_blog.html > ./blog.html
+
+# sed -i "" "s/{{blog_posts}}/$INSERTHTML/" ./index.html
