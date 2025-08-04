@@ -47,6 +47,7 @@ body {
     );
     background-attachment: fixed;
     color: var(--fallbackTextColor);
+    margin: 0;
     padding: 1em;
     font-family: Sono, 'Courier New', Courier, monospace;
 }
@@ -70,17 +71,26 @@ main {
     }
 } */
 header {
-    width: fit-content;
-    margin: 1em auto;
+    margin: 0 auto 1em auto;
+    max-width: 800px;
 }
 
+nav {
+    margin: 1em 0;
+    display: flex;
+    align-items: end;
+    gap: 2em;
+}
 nav a {
     text-decoration: none;
+    font-size: 1.5em;
+}
+nav a span.selected {
     font-weight: bold;
-    font-size: large;
+    text-decoration: underline;
 }
 
-section, header, article, nav {
+section, header, article {
     background-color: var(--cardBackground);
     padding: 0 1em;
     border: 4px solid transparent;
