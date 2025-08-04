@@ -2,11 +2,11 @@
 
 ### Currently Playing
 
-- Death's Door
+- [Death's Door](https://youtu.be/IbPg9ErW0Q8?si=w_TBF_N-Ew32olHd)
 
-- Bravely Default (the original on my 3DS!)
+- [Bravely Default](https://youtu.be/voh6NEpwEVY?si=X0730QzaeatCxAPS) (the original on my 3DS!)
 
-- Pokémon Unite (until I get sick of it again)
+- [Pokémon Unite](https://youtu.be/3EgogPrNj_c?si=6tLfo-ggFIbutJhI) (until I get sick of it again)
 
 ### Past Games
 

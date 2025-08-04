@@ -2,9 +2,11 @@
 
 ### Currently Watching
 
-- Archer (again)
+- [Archer](https://youtu.be/WIfnM9ntFc8?si=qT1PY2rRJigz3OOE) (again)
 
-- Baby Reindeer (though honestly it makes me so uncomfortable that I might not finish it)
+- [Blue Eye Samurai](https://youtu.be/3gLlS9m4kns?si=BnlFN3GyhmetYR0J)
+
+- [Baby Reindeer](https://youtu.be/eafm1gB6SCM?si=gZMrXNgIjkdzIUdO) (though honestly it makes me so uncomfortable that I might not finish it)
 
 ### Past Series & Films
 

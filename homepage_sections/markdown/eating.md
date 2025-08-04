@@ -2,10 +2,10 @@
 
 ### Restaurants & Cafés
 
-- Tatte
-- Maman
-- Okaeri
-- bb.q Chicken
+- [Tatte](https://tattebakery.com)
+- [Maman](https://mamannyc.com)
+- [Okaeri](https://www.okaerijapanesecafe.com)
+- [bb.q Chicken](https://bbqchicken.com)
 
 ### Store-Bought Ready-to-Eats
 
