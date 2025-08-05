@@ -1,4 +1,4 @@
-# Blog Planned Features
+# Planned Features
 
 ## MVP
 
@@ -11,9 +11,9 @@
 
 - ☑️ Spotify integration
 
-- ☑️ separate blog page
+- ✅ ~separate blog page~
   - ☑️ with filters for year and month
-  - ☑️ truncate blog preview on index.html
+  - ❌ ~truncate blog preview on index.html~
 
 - ☑️ separate page for reviews
   - ☑️ with tags for media type
@@ -32,5 +32,6 @@
   - ☑️ email notifications
   - ☑️ badges on homepage sections with "new since you last visited"
   - ☑️ recently updated homepage sections bubble up to top of page (?)
+  - ☑️ blog page automatically filters for new posts and sorts oldest first
 
-- ☑️ make sections collapsible (?)
+- ☑️ make homepage sections collapsible (?)
