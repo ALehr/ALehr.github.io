@@ -2,9 +2,13 @@
 
 ### Currently Reading
 
-- [Aristotle and Dante Discover the Secrets of the Universe](https://bookshop.org/p/books/aristotle-and-dante-discover-the-secrets-of-the-universe-benjamin-alire-saenz/7553153?ean=9781442408937&next=t)
+- [The Magic Fish](https://bookshop.org/p/books/the-magic-fish-trung-le-nguyen/14722854?ean=9781984851598&next=t)
 
 ### Past Reads
+
+- [Aristotle and Dante Discover the Secrets of the Universe](https://bookshop.org/p/books/aristotle-and-dante-discover-the-secrets-of-the-universe-benjamin-alire-saenz/7553153?ean=9781442408937&next=t)<br>
+<span class="rating">★★★★★</span><br>
+Easily one of my favorite books, along with the sequel. This was my third time reading it, and it holds up. I'm excited to discuss this one with my students at the start of term.
 
 - [The Perks of Being a Wallflower](https://bookshop.org/p/books/the-perks-of-being-a-wallflower-stephen-chbosky/7061668?ean=9780671027346&next=t)<br>
 <span class="rating">★★★★★</span><br>
