@@ -1,9 +1,3 @@
-/* console.log(`main height: ${document.querySelector('main').clientHeight}`);
-const sectionsArray = Array.from(document.querySelectorAll('main > *'));
-let sectionsHeight = sectionsArray.reduce( (total, el) => {return total + el.clientHeight}, 0 );
-sectionsHeight += 16 * 6;
-console.log(`sections height: ${sectionsHeight}`); */
-
 // handle two column layout on 1000px breakpoint
 const handleColumns = () => {
 
