@@ -69,7 +69,6 @@ main {
     main {
         width: calc((100% - 1em) / 2);
         flex-wrap: wrap;
-        height: 3000px;
     }
 }
 header {
