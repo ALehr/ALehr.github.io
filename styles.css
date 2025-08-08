@@ -59,17 +59,19 @@ body {
 
 main {
     width: fit-content;
+    max-width: 800px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 1em;
 }
-/* @media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) {
     main {
-        flex-direction: row;
+        width: calc((100% - 1em) / 2);
         flex-wrap: wrap;
+        height: 3000px;
     }
-} */
+}
 header {
     margin: 0 auto 1em auto;
     max-width: 800px;
@@ -91,13 +93,11 @@ nav a span.selected {
 }
 
 section, header, article {
+    box-sizing: border-box;
     background-color: var(--cardBackground);
     padding: 0 1em;
     border: 4px solid transparent;
     border-radius: 10px;
-}
-section, article {
-    max-width: 800px;
 }
 
 h1 {
