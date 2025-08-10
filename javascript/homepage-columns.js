@@ -7,35 +7,21 @@ const handleColumns = () => {
     // verify breakpoint width
     if (document.querySelector('html').clientWidth >= 1000) {
 
-        // halve height for main to force flex columns to wrap
-        $MAIN.style.height = 'auto'; // reset before performing calculation
-        let columnsHeight = $MAIN.clientHeight / 2;
+        // shrink main height to force column wrapping
+        $MAIN.style.height = 'auto';
+        let columnsHeight = parseInt($MAIN.getBoundingClientRect().height * (3/5));
         $MAIN.style.height = `${columnsHeight}px`;
 
-        // handle element that wraps onto third column
-        // find distance between 2nd to last element and bottom of body
-        const columnElements = Array.from(document.querySelectorAll('main > *'));
-        columnElements.sort((a, b) => getComputedStyle(a).order - getComputedStyle(b).order); // sorted by render order
-        
-        const overflowElement = columnElements[columnElements.length - 1];
-        const anchorElement = columnElements[columnElements.length - 2];
-        const col2Gap = $MAIN.getBoundingClientRect().bottom - anchorElement.getBoundingClientRect().bottom;
-        console.log(col2Gap);
-        console.log(overflowElement.clientHeight);
-        const neededHeight = overflowElement.clientHeight - col2Gap
-        console.log(neededHeight);
-        console.log(col2Gap + neededHeight);
-        console.log(columnsHeight);
-        columnsHeight += neededHeight + 32;
-        console.log(columnsHeight);
-        $MAIN.style.height = `${columnsHeight}px`;
-
-        // set precise main height to begin with
-            // halve main height
-            // use that value to find first element that will wrap onto 2nd column
-                // calculate height of 1st element to last before wrap
-                // calculate height of 1st wrap element to end
-                // set main height to larger of these two values (the longer of the two columns)
+        // correct gap between bottom of lowest section in main and bottom of page
+        // find the lowest section
+        const mainContentArray = Array.from(document.querySelectorAll('main > *'));
+        mainContentArray.sort((a, b) => {return b.getBoundingClientRect().bottom - a.getBoundingClientRect().bottom});
+        const lowestElement = mainContentArray[0];
+        // find difference between bottom of lowest section and bottom of main
+        const bottomGap = parseInt($MAIN.getBoundingClientRect().bottom - lowestElement.getBoundingClientRect().bottom);
+        console.log(bottomGap);
+        columnsHeight -= bottomGap;
+        $MAIN.style.height = `${columnsHeight}px`;        
         
         // calculate width of body - left and right padding
         const $BODY = document.querySelector('body');
