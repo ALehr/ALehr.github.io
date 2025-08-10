@@ -85,3 +85,43 @@ INSERTHTML="${INSERTHTML}<!-- END converted .md from \/blog\/markdown\/ -->"
 sed "s/{{blog_posts}}/$INSERTHTML/" ./templates/_blog.html > ./blog.html
 
 # sed -i "" "s/{{blog_posts}}/$INSERTHTML/" ./index.html
+
+
+# Create Reviews
+
+rm ./reviews/html/*
+
+for file in ./reviews/markdown/*.md; do
+
+  if [ -f "$file" ]; then
+
+    NEWFILE=$(echo $file | sed "s/markdown/html/" | sed "s/.md/.html/")
+    touch $NEWFILE
+    echo "<div id=\"$(basename $NEWFILE .html)\">" > $NEWFILE
+    pandoc $file -f gfm -t HTML >> $NEWFILE
+    echo "</div>" >> $NEWFILE
+
+  fi
+done
+
+INSERTHTML="<!-- BEGIN converted .md from \/reviews\/markdown\/ -->"
+
+for file in ./reviews/html/*.html; do
+
+  if [ -f "$file" ]; then # Check if it's a regular file (not a directory)
+
+    NEWTEXT=$(<"$file")
+
+    NEWTEXT=${NEWTEXT//\</\\<}
+    NEWTEXT=${NEWTEXT//\>/\\>}
+    NEWTEXT=${NEWTEXT//\//\\/}
+    NEWTEXT=${NEWTEXT//\&/\\&}
+    NEWTEXT=${NEWTEXT//$'\n'/\\n}
+
+    INSERTHTML="${INSERTHTML}\n${NEWTEXT}"    
+  fi
+done
+
+INSERTHTML="${INSERTHTML}\n<!-- END converted .md from \/reviews\/markdown\/ -->"
+
+sed "s/{{reviews}}/$INSERTHTML/" ./templates/_reviews.html > ./reviews.html
