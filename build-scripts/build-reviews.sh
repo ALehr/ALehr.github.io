@@ -32,7 +32,7 @@ for file in ../reviews/*.html; do
     
     HTMLFRAG=$(./escape-html.sh $HTMLFRAG)
 
-    INSERTHTML="${INSERTHTML} ${HTMLFRAG}"
+    INSERTHTML="${HTMLFRAG} ${INSERTHTML}"
 done
 
 INSERTHTML="${INSERTHTML}\n<!-- END converted .md from \/homepage_sections\/markdown\/ -->"

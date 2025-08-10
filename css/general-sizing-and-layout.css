@@ -50,3 +50,7 @@ h1 {
 img {
     max-width: 100%;
 }
+
+.rating {
+    margin: 0;
+}
