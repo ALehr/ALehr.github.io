@@ -3,10 +3,20 @@
 ## generate html from md files
 
 for file in ../reviews/*/*.md; do
+
+    # generate temporary html file and insert heading
     NEWFILE=$(echo $file | sed "s/.md/.html/")
     TITLE=$(yq --front-matter=extract '.title' $file)
     URL=$(yq --front-matter=extract '.url' $file)
     echo "<h3><a href=\"$URL\">$TITLE</a></h3>" > $NEWFILE
+    
+    # insert author name if present
+    AUTHOR=$(yq --front-matter=extract '.author' $file)
+    if [ "$AUTHOR" != "null" ]; then
+        echo "<p class=\"author\">by $AUTHOR</p>" >> $NEWFILE
+    fi
+
+    # process star ratings
     FULLSTARS=$(yq --front-matter=extract '.rating' $file)
     TOTALSTARS=$(yq --front-matter=extract '.out-of' $file)
     EMPTYSTARS=$(($TOTALSTARS - $FULLSTARS))
@@ -21,6 +31,8 @@ for file in ../reviews/*/*.md; do
     done
     RATINGSTARS+="</p>"
     echo $RATINGSTARS >> $NEWFILE
+    
+    # process body of review
     pandoc $file -f gfm -t HTML >> $NEWFILE
 done
 

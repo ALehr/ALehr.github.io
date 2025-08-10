@@ -51,6 +51,6 @@ img {
     max-width: 100%;
 }
 
-.rating {
+.rating, .author {
     margin: 0;
 }
