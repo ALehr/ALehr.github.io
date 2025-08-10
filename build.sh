@@ -88,4 +88,5 @@ sed "s/{{blog_posts}}/$INSERTHTML/" ./templates/_blog.html > ./blog.html
 
 
 # Create Reviews
-./build-scripts/build-reviews.sh
+cd build-scripts
+./build-reviews.sh
