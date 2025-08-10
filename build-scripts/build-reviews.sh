@@ -30,7 +30,7 @@ INSERTHTML="<!-- BEGIN converted .md from /reviews/ -->"
 category=$(ls ../reviews/ | head -n 1)
 INSERTHTML+="<section id=\"$category\"><h2>$category</h2>"
 for file in ../reviews/*/*.html; do
-    local parentFolder=$(basename $(dirname $file))
+    local parentFolder=$(basename $(dirname $file) | sed s/-/' '/g)
     if [ "$parentFolder" = "$category" ]; then
     else
         INSERTHTML+="</section>"
@@ -38,7 +38,7 @@ for file in ../reviews/*/*.html; do
         INSERTHTML+="<section id=\"$category\"><h2>$category</h2>"
     fi
     
-    HTMLFRAG="<article id=\"$(basename $file | sed s/.html//)\">$(<"$file")</article>"
+    HTMLFRAG="<div id=\"$(basename $file | sed s/.html//)\">$(<"$file")</div>"
 
     INSERTHTML+="$HTMLFRAG"
 done
