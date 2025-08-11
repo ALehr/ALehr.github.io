@@ -4,11 +4,18 @@
 
 for file in ../reviews/*/*.md; do
 
-    # generate temporary html file and insert heading
+    # generate temporary html file
     NEWFILE=$(echo $file | sed "s/.md/.html/")
+
+    # generate heading and handle link
     TITLE=$(yq --front-matter=extract '.title' $file)
     URL=$(yq --front-matter=extract '.url' $file)
-    echo "<h3><a href=\"$URL\">$TITLE</a></h3>" > $NEWFILE
+    validURLRegex='(https?|ftp|file)://[-[:alnum:]\+&@#/%?=~_|!:,.;]*[-[:alnum:]\+&@#/%=~_|]'
+    if [[ $URL =~ $validURLRegex ]]; then
+        echo "<h3><a href=\"$URL\">$TITLE</a></h3>" > $NEWFILE
+    else
+        echo "<h3>$TITLE</h3>" > $NEWFILE
+    fi
     
     # insert author name if present
     AUTHOR=$(yq --front-matter=extract '.author' $file)
