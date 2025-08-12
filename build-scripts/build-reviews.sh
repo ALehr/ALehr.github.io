@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+echo "    building reviews..."
+
 ## generate html fragments from md files
 
 for file in ../markdown/reviews/*/*.md; do
@@ -73,3 +75,5 @@ sed s/{{review_posts}}/$INSERTHTML/ ../templates/_reviews.html > ../reviews.html
 
 # clean up temporary html fragments
 rm ../markdown/reviews/*/*.html
+
+echo "    ...reviews complete\n"

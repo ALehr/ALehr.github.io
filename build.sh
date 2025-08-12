@@ -1,5 +1,6 @@
 #!/bin/zsh
 
+echo "\nbeginning build process...\n"
 cd build-scripts
 
 # Create Homepage Sections
@@ -10,3 +11,5 @@ cd build-scripts
 
 # Create Reviews
 ./build-reviews.sh
+
+echo "...build process complete\n"

@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+echo "    building homepage..."
+
 ## generate html fragments from md files
 
 for file in ../markdown/homepage/*.md; do
@@ -35,3 +37,5 @@ sed "s/{{homepage_sections}}/$INSERTHTML/" ../templates/_index.html > ../index.h
 
 # clean up temporary html fragments
 rm ../markdown/homepage/*.html
+
+echo "    ...homepage complete\n"

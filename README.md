@@ -23,6 +23,7 @@
   - ☑️ LetterBox integration 
 
 - ✅ ~refactor build.sh~
+  - ☑️ handle potential build errors (with accompanying console logs)
 
 - ☑️ automate build process
   - ☑️ automated workflow for blog posts

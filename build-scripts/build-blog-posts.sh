@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+echo "    building blog posts..."
+
 ## generate html fragments from md files
 
 for file in ../markdown/blog/*.md; do
@@ -43,3 +45,5 @@ sed "s/{{blog_posts}}/$INSERTHTML/" ../templates/_blog.html > ../blog.html
 
 # clean up temporary html fragments
 rm ../markdown/blog/*.html
+
+echo "    ...blog posts complete\n"
