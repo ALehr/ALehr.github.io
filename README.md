@@ -15,14 +15,14 @@
   - ☑️ with filters for year and month
   - ❌ ~truncate blog preview on index.html~
 
-- ☑️ separate page for reviews
+- ✅ ~separate page for reviews~
   - ☑️ with tags for media type
   - ☑️ html component for review format
   - ☑️ truncate review previews on index.html
   - ☑️ GoodReads integration 
   - ☑️ LetterBox integration 
 
-- ☑️ refactor build.sh
+- ✅ ~refactor build.sh~
 
 - ☑️ automate build process
   - ☑️ automated workflow for blog posts

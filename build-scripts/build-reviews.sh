@@ -1,8 +1,8 @@
 #!/bin/zsh
 
-## generate html from md files
+## generate html fragments from md files
 
-for file in ../reviews/*/*.md; do
+for file in ../markdown/reviews/*/*.md; do
 
     # generate temporary html file
     NEWFILE=$(echo $file | sed "s/.md/.html/")
@@ -45,12 +45,12 @@ done
 
 # insert generated html into index.html
 
-INSERTHTML="<!-- BEGIN converted .md from /reviews/ -->"
+INSERTHTML="<!-- BEGIN converted .md from /markdown/reviews/ -->"
 
 # create a section for each category folder
-category=$(ls ../reviews/ | head -n 1)
+category=$(ls ../markdown/reviews/ | head -n 1)
 INSERTHTML+="<section id=\"$category\"><h2>$category</h2>"
-for file in ../reviews/*/*.html; do
+for file in ../markdown/reviews/*/*.html; do
     local parentFolder=$(basename $(dirname $file) | sed s/-/' '/g)
     if [ "$parentFolder" = "$category" ]; then
     else
@@ -64,7 +64,7 @@ for file in ../reviews/*/*.html; do
     INSERTHTML+="$HTMLFRAG"
 done
 
-INSERTHTML+="</section><!-- END converted .md from /reviews/ -->"
+INSERTHTML+="</section><!-- END converted .md from /markdown/reviews/ -->"
 
 # escape special characters in the html for use in sed below
 INSERTHTML=$(./escape-html.sh $INSERTHTML)
@@ -72,4 +72,4 @@ INSERTHTML=$(./escape-html.sh $INSERTHTML)
 sed s/{{review_posts}}/$INSERTHTML/ ../templates/_reviews.html > ../reviews.html
 
 # clean up temporary html fragments
-rm ../reviews/*/*.html
+rm ../markdown/reviews/*/*.html

@@ -1,35 +1,37 @@
 #!/bin/zsh
 
-rm ../homepage_sections/html/*
+## generate html fragments from md files
 
-for file in ../homepage_sections/markdown/*.md; do
+for file in ../markdown/homepage/*.md; do
 
-  if [ -f "$file" ]; then
+  # generate temporary html file
+  NEWFILE=$(echo $file | sed "s/.md/.html/")
 
-    NEWFILE=$(echo $file | sed "s/markdown/html/" | sed "s/.md/.html/")
-    touch $NEWFILE
-    echo "<section id=\"$(basename $NEWFILE .html)\">" > $NEWFILE
-    pandoc $file -f gfm -t HTML >> $NEWFILE
-    echo "</section>" >> $NEWFILE
+  # set section id to md file name
+  echo "<section id=\"$(basename $NEWFILE .html)\">" > $NEWFILE
 
-  fi
+  # generate html from the md file
+  pandoc $file -f gfm -t HTML >> $NEWFILE
+  echo "</section>" >> $NEWFILE
+
 done
 
-INSERTHTML="<!-- BEGIN converted .md from \/homepage_sections\/markdown\/ -->"
+INSERTHTML="<!-- BEGIN converted .md from /markdown/homepage/ -->"
 
-for file in ../homepage_sections/html/*.html; do
+for file in ../markdown/homepage/*.html; do
 
-  if [ -f "$file" ]; then # Check if it's a regular file (not a directory)
+  HTMLFRAG=$(<"$file")
 
-    NEWTEXT=$(<"$file")
+  INSERTHTML+="$HTMLFRAG"
 
-    INSERTHTML="$INSERTHTML$NEWTEXT"    
-  fi
 done
 
-INSERTHTML="$INSERTHTML<!-- END converted .md from \/homepage_sections\/markdown\/ -->"
+INSERTHTML+="<!-- END converted .md from /markdown/homepage/ -->"
 
 # escape special characters in the html for use in sed below
 INSERTHTML=$(./escape-html.sh $INSERTHTML)
 
 sed "s/{{homepage_sections}}/$INSERTHTML/" ../templates/_index.html > ../index.html
+
+# clean up temporary html fragments
+rm ../markdown/homepage/*.html
