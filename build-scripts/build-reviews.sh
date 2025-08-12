@@ -46,6 +46,8 @@ done
 # insert generated html into index.html
 
 INSERTHTML="<!-- BEGIN converted .md from /reviews/ -->"
+
+# create a section for each category folder
 category=$(ls ../reviews/ | head -n 1)
 INSERTHTML+="<section id=\"$category\"><h2>$category</h2>"
 for file in ../reviews/*/*.html; do
@@ -64,6 +66,7 @@ done
 
 INSERTHTML+="</section><!-- END converted .md from /reviews/ -->"
 
+# escape special characters in the html for use in sed below
 INSERTHTML=$(./escape-html.sh $INSERTHTML)
 
 sed s/{{review_posts}}/$INSERTHTML/ ../templates/_reviews.html > ../reviews.html
