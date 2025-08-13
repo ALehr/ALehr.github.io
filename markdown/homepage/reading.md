@@ -2,6 +2,8 @@
 
 ### Currently Reading
 
+- [Aristotle and Dante Dive into the Waters of the World](https://bookshop.org/p/books/aristotle-and-dante-dive-into-the-waters-of-the-world-benjamin-alire-saenz/18236448?ean=9781534496200&next=t)
+
 - [Bird by Bird: Some Instructions on Writing and Life](https://bookshop.org/p/books/bird-by-bird-some-instructions-on-writing-and-life-anne-lamott/8649952?ean=9780385480017&next=t)
 
 ### Past Reads
