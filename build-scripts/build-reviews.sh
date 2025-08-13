@@ -10,7 +10,7 @@ for file in ../markdown/reviews/*/*.md; do
     NEWFILE=$(echo $file | sed "s/.md/.html/")
 
     # get date of review
-    ./get-post-date.sh $file
+    postDate=$(./get-post-date.sh $file)
 
     # generate heading and handle link
     TITLE=$(yq --front-matter=extract '.title' $file)
@@ -64,7 +64,7 @@ for file in ../markdown/reviews/*/*.html; do
         INSERTHTML+="<section id=\"$category\"><h2>$category</h2>"
     fi
     
-    HTMLFRAG="<div id=\"$(basename $file | sed s/.html//)\">$(<"$file")</div>"
+    HTMLFRAG="<div id=\"$(basename $file | sed s/.html//)\" data-date=\"$postDate\">$(<"$file")</div>"
 
     INSERTHTML+="$HTMLFRAG"
 done
