@@ -9,12 +9,14 @@ for file in ../markdown/blog/*.md; do
   # generate temporary html file
   NEWFILE=$(echo $file | sed "s/.md/.html/")
 
+  # get date of blog post
+  postDate=$(./get-post-date.sh $file)
+
   # set article id to numeric date from md file name
-  ARTICLETITLE=$(basename "$file" .md)
-  echo "<article id=\"$ARTICLETITLE\">" > $NEWFILE
+  echo "<article id=\"$postDate\" data-date=\"$postDate\">" > $NEWFILE
 
   # convert article date to human readable format for html
-  ARTICLETITLE=$(date -jf %F $ARTICLETITLE '+%A %-d %B %Y')
+  ARTICLETITLE=$(date -jf %F $postDate '+%A %-d %B %Y')
   echo "<h2>$ARTICLETITLE</h2>" >> $NEWFILE
 
   # generate html from the md file
@@ -22,6 +24,8 @@ for file in ../markdown/blog/*.md; do
   echo "</article>" >> $NEWFILE
 
 done
+
+# insert html fragments into blog page template
 
 INSERTHTML=""
 

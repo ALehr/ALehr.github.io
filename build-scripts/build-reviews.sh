@@ -9,6 +9,9 @@ for file in ../markdown/reviews/*/*.md; do
     # generate temporary html file
     NEWFILE=$(echo $file | sed "s/.md/.html/")
 
+    # get date of review
+    ./get-post-date.sh $file
+
     # generate heading and handle link
     TITLE=$(yq --front-matter=extract '.title' $file)
     URL=$(yq --front-matter=extract '.url' $file)
