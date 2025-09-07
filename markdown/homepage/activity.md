@@ -6,6 +6,8 @@
 
 - Studying for my Italian teaching certification exam
 
+- Thinking about selling all my gaming stuff? (Hit me up if you might want some of it.)
+
 ### Work Stuff
 
-- Back on campus and getting ready for the new school year
+- One week into the new school year! Back to lesson planning and grading.
