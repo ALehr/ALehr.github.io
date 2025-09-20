@@ -6,6 +6,8 @@
 
 - [Frieren: Beyond Journey's End](https://bookshop.org/p/books/frieren-beyond-journey-s-end-vol-1-kanehito-yamada/7a279fe43d40dca3?ean=9781974725762&next=t)
 
+- [The Divine Comedy of Dante Alighieri](https://www.poetryintranslation.com/PITBR/Italian/Danthome.php)
+
 ### Past Reads
 
 #### [Fairy Tale by Stephen King](https://bookshop.org/p/books/fairy-tale-stephen-king/452797da1cfdb3be?ean=9781668002193&next=t)
