@@ -2,9 +2,7 @@
 
 ### Currently Reading
 
-- [The Gunslinger by Stephen King](https://bookshop.org/p/books/the-dark-tower-i-the-gunslinger-stephen-king/c1b1288cf09aa02e?ean=9781501143519&next=t)
-
-- [Frieren: Beyond Journey's End](https://bookshop.org/p/books/frieren-beyond-journey-s-end-vol-1-kanehito-yamada/7a279fe43d40dca3?ean=9781974725762&next=t)
+- [The Nobleman's Guide to Scandal and Shipwrecks](https://bookshop.org/p/books/the-nobleman-s-guide-to-scandal-and-shipwrecks-mackenzi-lee/48e1e2a3930dcd26?ean=9780062916020&next=t)
 
 - [The Divine Comedy of Dante Alighieri](https://www.poetryintranslation.com/PITBR/Italian/Danthome.php)
 

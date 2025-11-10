@@ -1,18 +1,9 @@
-## 🎮 What I'm Playing
-
-### Currently Playing
-
-- [Ori and the Blind Forest]()
-
-- [Bravely Default](https://youtu.be/voh6NEpwEVY?si=X0730QzaeatCxAPS) (the original on my 3DS!)
-
-- [Animal Crossing: New Horizons - Happy Home Paradise](https://youtu.be/iyyC4C0ywCM?si=M1IFabf7TDRegY9D)
-
-### Past Games
-
-#### [Death's Door](https://youtu.be/NjnEg3ucXpc?si=2_Ff5rteGoxhkzXi)
-
-<span class="rating">★★★★☆</span>
+---
+title: Death's Door
+url: https://youtu.be/NjnEg3ucXpc?si=2_Ff5rteGoxhkzXi
+rating: 4
+out-of: 5
+---
 
 I finally finished a game in I can't remember how long! I have some mixed feelings about this one, but ultimately I gave it four stars instead of three because it was compelling enough that I binged it.
 
