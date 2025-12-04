@@ -2,7 +2,7 @@
 
 echo "    building blog posts..."
 
-## generate html fragments from md files
+# generate html fragments from md files
 
 for file in ../markdown/blog/*.md; do
 
@@ -19,6 +19,7 @@ for file in ../markdown/blog/*.md; do
 
   # generate html from the md file
   pandoc $file -f gfm -t HTML >> $NEWFILE
+
   echo "</article>" >> $NEWFILE
 
 done
@@ -28,6 +29,9 @@ INSERTHTML=""
 for file in ../markdown/blog/*.html; do
 
   HTMLFRAG=$(<"$file")
+
+  # create previous and next post buttons
+  HTMLFRAG+=$(./previous-next-post-buttons.sh blog $(basename "$file"))
 
   INSERTHTML="$HTMLFRAG$INSERTHTML"
 
