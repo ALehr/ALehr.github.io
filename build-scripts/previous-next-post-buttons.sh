@@ -10,16 +10,20 @@ NUMFILES=${#FILES[@]}
 FILEINDEX=$FILES[(ie)$FILENAME]
 BUTTONSHTML=""
 
-PREVFILE=$(($FILEINDEX-1))
+PREVFILEINDEX=$(($FILEINDEX-1))
 
-if (($PREVFILE > 0)); then
-    BUTTONSHTML+="<button class=\"previous\">${FILES[$PREVFILE]}</button>"
+if (($PREVFILEINDEX > 0)); then
+    PREVFILE=${FILES[$PREVFILEINDEX]}
+    PREVFILE=$(basename "$PREVFILE" .html)
+    BUTTONSHTML+="<button class=\"previous\"><a href=\"#$PREVFILE\">$PREVFILE</a></button>"
 fi
 
-NEXTFILE=$(($FILEINDEX+1))
+NEXTFILEINDEX=$(($FILEINDEX+1))
 
-if (($NEXTFILE <= $NUMFILES)); then
-    BUTTONSHTML+="<button class=\"next\">${FILES[$NEXTFILE]}</button>"
+if (($NEXTFILEINDEX <= $NUMFILES)); then
+    NEXTFILE=${FILES[$NEXTFILEINDEX]}
+    NEXTFILE=$(basename "$NEXTFILE" .html)
+    BUTTONSHTML+="<button class=\"next\"><a href=\"#$NEXTFILE\">$NEXTFILE</a></button>"
 fi
 
 echo $BUTTONSHTML
