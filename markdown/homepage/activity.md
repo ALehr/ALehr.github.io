@@ -4,10 +4,10 @@
 
 - Slowly adding new features to my blog
 
-- Studying for my Italian teaching certification exam
-
-- Thinking about selling all my gaming stuff? (Hit me up if you might want some of it.)
+- Planning a textbook supplement for Wheelock's Latin
 
 ### Work Stuff
 
-- One week into the new school year! Back to lesson planning and grading.
+- Panicking over my AP Latin class's progress through the curriculum
+
+- Slowly but surely building up student engagement with my school's chapter of the Junior Classical League

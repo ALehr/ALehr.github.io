@@ -2,7 +2,9 @@
 
 ### Currently Playing
 
-- [Ori and the Blind Forest]()
+- [Hades 2](https://youtu.be/U8lJRcUeEMs?si=FWLVsTxR9OOg2WsF)
+
+- [Ori and the Blind Forest](https://youtu.be/3rTtWcBATk4?si=eqlmwx8Kz-y4A6O4)
 
 - [Bravely Default](https://youtu.be/voh6NEpwEVY?si=X0730QzaeatCxAPS) (the original on my 3DS!)
 
