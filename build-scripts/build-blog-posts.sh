@@ -2,7 +2,10 @@
 
 echo "    building blog posts..."
 
-# generate html fragments from md files
+# delete previous contents of blog directory
+rm ../blog/*.html
+
+# generate html fragments from md post files
 
 for file in ../markdown/blog/*.md; do
 
@@ -24,6 +27,7 @@ for file in ../markdown/blog/*.md; do
 
 done
 
+# create summary of blog posts to insert into blog/index.html
 INSERTHTML=""
 
 for file in ../markdown/blog/*.html; do
