@@ -28,10 +28,19 @@ INSERTHTML=""
 
 for file in ../markdown/blog/*.html; do
 
+  # get contents of file
   HTMLFRAG=$(<"$file")
 
+  FILENAME=$(basename "$file")
+
   # create previous and next post buttons
-  HTMLFRAG+=$(./previous-next-post-buttons.sh blog $(basename "$file"))
+  HTMLFRAG+=$(./previous-next-post-buttons.sh blog $FILENAME)
+
+  # escape special characters in the html for use in sed below
+  HTMLFRAG=$(./escape-html.sh $HTMLFRAG)
+
+  #create standalone blog page for post
+  sed "s/{{blog_posts}}/$HTMLFRAG/" ../templates/_blog.html > ../blog/$FILENAME
 
   INSERTHTML="$HTMLFRAG$INSERTHTML"
 
@@ -43,6 +52,7 @@ INSERTHTML+="<!-- END converted .md from /markdown/blog/ -->"
 # escape special characters in the html for use in sed below
 INSERTHTML=$(./escape-html.sh $INSERTHTML)
 
+# generate blog index page
 sed "s/{{blog_posts}}/$INSERTHTML/" ../templates/_blog.html > ../blog/index.html
 
 # sed -i "" "s/{{blog_posts}}/$INSERTHTML/" ./index.html
