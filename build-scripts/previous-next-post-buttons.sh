@@ -18,7 +18,11 @@ PREVFILEINDEX=$(($FILEINDEX-1))
 
 if (($PREVFILEINDEX > 0)); then
     PREVFILE=${FILES[$PREVFILEINDEX]}
+
+    # convert blog date to human format for button text
     PREVBUTTONTEXT=$(basename "$PREVFILE" .html)
+    PREVBUTTONTEXT=$(date -jf %F $PREVBUTTONTEXT '+%A %-d %B %Y')
+
     BUTTONSHTML+="<button class=\"previous\"><a href=\"./$PREVFILE\">$PREVBUTTONTEXT</a></button>"
 fi
 
@@ -27,7 +31,11 @@ NEXTFILEINDEX=$(($FILEINDEX+1))
 
 if (($NEXTFILEINDEX <= $NUMFILES)); then
     NEXTFILE=${FILES[$NEXTFILEINDEX]}
+    
+    # convert blog date to human format for button text
     NEXTBUTTONTEXT=$(basename "$NEXTFILE" .html)
+    NEXTBUTTONTEXT=$(date -jf %F $NEXTBUTTONTEXT '+%A %-d %B %Y')
+
     BUTTONSHTML+="<button class=\"next\"><a href=\"./$NEXTFILE\">$NEXTBUTTONTEXT</a></button>"
 fi
 
