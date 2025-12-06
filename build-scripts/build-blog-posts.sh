@@ -43,7 +43,7 @@ INSERTHTML+="<!-- END converted .md from /markdown/blog/ -->"
 # escape special characters in the html for use in sed below
 INSERTHTML=$(./escape-html.sh $INSERTHTML)
 
-sed "s/{{blog_posts}}/$INSERTHTML/" ../templates/_blog.html > ../blog.html
+sed "s/{{blog_posts}}/$INSERTHTML/" ../templates/_blog.html > ../blog/index.html
 
 # sed -i "" "s/{{blog_posts}}/$INSERTHTML/" ./index.html
 
