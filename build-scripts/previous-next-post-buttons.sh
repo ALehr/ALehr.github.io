@@ -4,6 +4,14 @@
 FOLDER=$1
 FILENAME=$2
 
+# function for generating button display text
+buttonText () {
+    text=$1
+    text=$(basename "$text" .html)
+    text=$(date -jf %F $text '+%A %-d %B %Y')
+    echo $text
+}
+
 cd ../markdown/$FOLDER
 
 # save files in folder to array
@@ -18,12 +26,7 @@ PREVFILEINDEX=$(($FILEINDEX-1))
 
 if (($PREVFILEINDEX > 0)); then
     PREVFILE=${FILES[$PREVFILEINDEX]}
-
-    # convert blog date to human format for button text
-    PREVBUTTONTEXT=$(basename "$PREVFILE" .html)
-    PREVBUTTONTEXT=$(date -jf %F $PREVBUTTONTEXT '+%A %-d %B %Y')
-
-    BUTTONSHTML+="<button class=\"previous\"><a href=\"./$PREVFILE\">$PREVBUTTONTEXT</a></button>"
+    BUTTONSHTML+="<a class=\"previous\" href=\"./$PREVFILE\">$(buttonText $PREVFILE)</a>"
 fi
 
 # if there's a following file in the array, generate a button for it
@@ -31,12 +34,7 @@ NEXTFILEINDEX=$(($FILEINDEX+1))
 
 if (($NEXTFILEINDEX <= $NUMFILES)); then
     NEXTFILE=${FILES[$NEXTFILEINDEX]}
-    
-    # convert blog date to human format for button text
-    NEXTBUTTONTEXT=$(basename "$NEXTFILE" .html)
-    NEXTBUTTONTEXT=$(date -jf %F $NEXTBUTTONTEXT '+%A %-d %B %Y')
-
-    BUTTONSHTML+="<button class=\"next\"><a href=\"./$NEXTFILE\">$NEXTBUTTONTEXT</a></button>"
+    BUTTONSHTML+="<a class=\"next\" href=\"./$NEXTFILE\">$(buttonText $NEXTFILE)</a>"
 fi
 
 # return html for the buttons to previous call
