@@ -2,6 +2,10 @@
 
 ### Currently Reading
 
+- [The Secret History](https://bookshop.org/p/books/the-secret-history-donna-tartt/de5042f1caf6ae3a?ean=9781400031702&next=t) (reread)
+
+- [Circe](https://bookshop.org/p/books/circe-madeline-miller/e28b1768925ee3b0?ean=9780316556323&next=t) (reread)
+
 - [The Nobleman's Guide to Scandal and Shipwrecks](https://bookshop.org/p/books/the-nobleman-s-guide-to-scandal-and-shipwrecks-mackenzi-lee/48e1e2a3930dcd26?ean=9780062916020&next=t)
 
 - [The Divine Comedy of Dante Alighieri](https://www.poetryintranslation.com/PITBR/Italian/Danthome.php)
