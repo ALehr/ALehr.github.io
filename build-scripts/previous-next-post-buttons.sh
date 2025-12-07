@@ -26,7 +26,7 @@ NEXTFILEINDEX=$(($FILEINDEX+1))
 
 if (($NEXTFILEINDEX <= $NUMFILES)); then
     NEXTFILE=${FILES[$NEXTFILEINDEX]}
-    BUTTONSHTML+="<a class=\"next-button\" href=\"./$NEXTFILE\">$(buttonText $NEXTFILE)</a>"
+    BUTTONSHTML+="<a class=\"next-button\" href=\"./${NEXTFILE%%.*}\">$(buttonText $NEXTFILE)</a>"
 fi
 
 # if there's a previous file in the array, generate a button for it
@@ -34,7 +34,7 @@ PREVFILEINDEX=$(($FILEINDEX-1))
 
 if (($PREVFILEINDEX > 0)); then
     PREVFILE=${FILES[$PREVFILEINDEX]}
-    BUTTONSHTML+="<a class=\"previous-button\" href=\"./$PREVFILE\">$(buttonText $PREVFILE)</a>"
+    BUTTONSHTML+="<a class=\"previous-button\" href=\"./${PREVFILE%%.*}\">$(buttonText $PREVFILE)</a>"
 fi
 
 BUTTONSHTML+="</nav></section>"
