@@ -37,6 +37,10 @@ for file in ../markdown/blog/*.html; do
 
   FILENAME=$(basename "$file")
 
+  # get preview for blog/index
+  PREVIEW="<article><h2>$(./get-post-preview.sh $HTMLFRAG)</p><p><a class=\"read-more\" href=\"./$FILENAME\">...read more</a></p></article>"
+  INSERTHTML="$PREVIEW$INSERTHTML"
+
   # create previous and next post buttons
   HTMLFRAG+=$(./previous-next-post-buttons.sh blog $FILENAME)
 
@@ -45,8 +49,6 @@ for file in ../markdown/blog/*.html; do
 
   #create standalone blog page for post
   sed "s/{{blog_posts}}/$HTMLFRAG/" ../templates/_blog.html > ../blog/$FILENAME
-
-  INSERTHTML="$HTMLFRAG$INSERTHTML"
 
 done
 
