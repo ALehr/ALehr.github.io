@@ -38,7 +38,7 @@ for file in ../markdown/blog/*.html; do
   FILENAME=$(basename "$file")
 
   # get preview for blog/index
-  PREVIEW="<article><h2>$(./get-post-preview.sh $HTMLFRAG)</p><p><a class=\"read-more\" href=\"./$FILENAME\">...read more</a></p></article>"
+  PREVIEW="<article id=\"${FILENAME%%.*}\">$(./get-post-preview.sh $HTMLFRAG)<p><a class=\"read-more\" href=\"./$FILENAME\">...read more</a></p></article>"
   INSERTHTML="$PREVIEW$INSERTHTML"
 
   # create previous and next post buttons

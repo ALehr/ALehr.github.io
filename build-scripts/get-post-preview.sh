@@ -2,7 +2,8 @@
 
 postHTML=$1
 
-firstParagraph=${postHTML#*"<h2>"}
-firstParagraph=${firstParagraph%%"</p>"*}
+preview=${postHTML#*"<h2>"}
+preview=${preview%%"</p>"*}
+preview="<h2>$preview</p>"
 
-echo $firstParagraph
+echo $preview
