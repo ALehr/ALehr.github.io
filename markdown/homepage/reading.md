@@ -2,7 +2,7 @@
 
 ### Currently Reading
 
-I'm not currently reading anything in particular, just bouncing around between a handful of books until I settle on something that holds my attention.
+- [Alguien para Ti by Juan Arcones](https://bookshop.org/p/books/alguien-para-ti-someone-for-you-juan-arcones/d44c8720802fb395?ean=9786073836395&next=t)
 
 ### Past Reads
 
