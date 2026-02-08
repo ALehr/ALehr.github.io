@@ -4,6 +4,8 @@
 
 - Final Fantasy Tactics Advance (the original on my modded 3DS!)
 
+- Trying out literally SO MANY Game Boy Advance games now that I finally got around to setting up [open_abg_firm](https://github.com/profi200/open_agb_firm) on my 3DS
+
 ### Past Games
 
 #### [Hades 2](https://youtu.be/U8lJRcUeEMs?si=FWLVsTxR9OOg2WsF)
