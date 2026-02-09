@@ -10,7 +10,7 @@ for file in ../markdown/homepage/*.md; do
   NEWFILE=$(echo $file | sed "s/.md/.html/")
 
   # set section id to md file name
-  echo "<section id=\"$(basename $NEWFILE .html)\">" > $NEWFILE
+  echo "<section id=\"$(basename $NEWFILE .html)\" class=\"card\">" > $NEWFILE
 
   # generate html from the md file
   pandoc $file -f gfm -t HTML >> $NEWFILE

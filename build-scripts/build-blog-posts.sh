@@ -14,7 +14,7 @@ for file in ../markdown/blog/*.md; do
 
   # set article id to numeric date from md file name
   ARTICLETITLE=$(basename "$file" .md)
-  echo "<article id=\"$ARTICLETITLE\">" > $NEWFILE
+  echo "<article id=\"$ARTICLETITLE\" class=\"card\">" > $NEWFILE
 
   # convert article date to human readable format for html
   ARTICLETITLE=$(date -jf %F $ARTICLETITLE '+%A %-d %B %Y')
