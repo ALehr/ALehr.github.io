@@ -1,3 +1,15 @@
+/* next and prev buttons stacked on small screens */
+@media screen and (max-width: 600px) {
+    .post-navigation {
+	flex-direction: column;
+	row-gap: 1em;
+    }
+
+    .post-navigation > a {
+	width: 100%;
+    }
+}
+
 .post-navigation {
 	margin: 0;
 	column-gap: 1em;
