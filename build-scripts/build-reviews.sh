@@ -51,14 +51,14 @@ INSERTHTML="<!-- BEGIN converted .md from /markdown/reviews/ -->"
 
 # create a section for each category folder
 category=$(ls ../markdown/reviews/ | head -n 1)
-INSERTHTML+="<section id=\"$category\"><h2>$category</h2>"
+INSERTHTML+="<section id=\"$category\" class=\"card\"><h2>$category</h2>"
 for file in ../markdown/reviews/*/*.html; do
     local parentFolder=$(basename $(dirname $file) | sed s/-/' '/g)
     if [ "$parentFolder" = "$category" ]; then
     else
         INSERTHTML+="</section>"
         category=$parentFolder
-        INSERTHTML+="<section id=\"$category\"><h2>$category</h2>"
+        INSERTHTML+="<section id=\"$category\" class=\"card\"><h2>$category</h2>"
     fi
     
     HTMLFRAG="<div id=\"$(basename $file | sed s/.html//)\">$(<"$file")</div>"

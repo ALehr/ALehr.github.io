@@ -46,6 +46,6 @@
     }
 }
 
-section, header, article, nav {
+.card {
     animation: colorChange 60s linear infinite;
 }

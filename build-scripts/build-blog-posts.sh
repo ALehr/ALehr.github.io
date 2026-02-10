@@ -2,7 +2,10 @@
 
 echo "    building blog posts..."
 
-## generate html fragments from md files
+# delete previous contents of blog directory
+rm ../blog/*.html
+
+# generate html fragments from md post files
 
 for file in ../markdown/blog/*.md; do
 
@@ -11,7 +14,7 @@ for file in ../markdown/blog/*.md; do
 
   # set article id to numeric date from md file name
   ARTICLETITLE=$(basename "$file" .md)
-  echo "<article id=\"$ARTICLETITLE\">" > $NEWFILE
+  echo "<article id=\"$ARTICLETITLE\" class=\"card\">" > $NEWFILE
 
   # convert article date to human readable format for html
   ARTICLETITLE=$(date -jf %F $ARTICLETITLE '+%A %-d %B %Y')
@@ -19,17 +22,33 @@ for file in ../markdown/blog/*.md; do
 
   # generate html from the md file
   pandoc $file -f gfm -t HTML >> $NEWFILE
+
   echo "</article>" >> $NEWFILE
 
 done
 
+# create summary of blog posts to insert into blog/index.html
 INSERTHTML=""
 
 for file in ../markdown/blog/*.html; do
 
+  # get contents of file
   HTMLFRAG=$(<"$file")
 
-  INSERTHTML="$HTMLFRAG$INSERTHTML"
+  FILENAME=$(basename "$file")
+
+  # get preview for blog/index
+  PREVIEW="<article id=\"${FILENAME%%.*}\">$(./get-post-preview.sh $HTMLFRAG)<p><a class=\"read-more\" href=\"./${FILENAME%%.*}\">...read more</a></p></article>"
+  INSERTHTML="$PREVIEW$INSERTHTML"
+
+  # create previous and next post buttons
+  HTMLFRAG+=$(./previous-next-post-buttons.sh blog $FILENAME)
+
+  # escape special characters in the html for use in sed below
+  HTMLFRAG=$(./escape-html.sh $HTMLFRAG)
+
+  #create standalone blog page for post
+  sed "s/{{blog_posts}}/$HTMLFRAG/" ../templates/_blog.html > ../blog/$FILENAME
 
 done
 
@@ -39,7 +58,8 @@ INSERTHTML+="<!-- END converted .md from /markdown/blog/ -->"
 # escape special characters in the html for use in sed below
 INSERTHTML=$(./escape-html.sh $INSERTHTML)
 
-sed "s/{{blog_posts}}/$INSERTHTML/" ../templates/_blog.html > ../blog.html
+# generate blog index page
+sed "s/{{blog_posts}}/$INSERTHTML/" ../templates/_blog.html > ../blog/index.html
 
 # sed -i "" "s/{{blog_posts}}/$INSERTHTML/" ./index.html
 

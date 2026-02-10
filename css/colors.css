@@ -17,7 +17,3 @@ body {
 
     color: var(--fallbackTextColor);
 }
-
-header, section, article {
-    background-color: var(--cardBackground);
-}
