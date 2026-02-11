@@ -1,9 +1,12 @@
 #!/bin/zsh
 
+OUTPUTDIRECTORY=$1
+
 echo "    building blog posts..."
 
-# delete previous contents of blog directory
-rm ../blog/*.html
+# reinitialize blog directory
+rm -rf $OUTPUTDIRECTORY/blog
+mkdir $OUTPUTDIRECTORY/blog
 
 # generate html fragments from md post files
 
@@ -48,7 +51,7 @@ for file in ../markdown/blog/*.html; do
   HTMLFRAG=$(./escape-html.sh $HTMLFRAG)
 
   #create standalone blog page for post
-  sed "s/{{blog_posts}}/$HTMLFRAG/" ../templates/_blog.html > ../blog/$FILENAME
+  sed "s/{{blog_posts}}/$HTMLFRAG/" ../templates/_blog.html > $OUTPUTDIRECTORY/blog/$FILENAME
 
 done
 
@@ -59,9 +62,7 @@ INSERTHTML+="<!-- END converted .md from /markdown/blog/ -->"
 INSERTHTML=$(./escape-html.sh $INSERTHTML)
 
 # generate blog index page
-sed "s/{{blog_posts}}/$INSERTHTML/" ../templates/_blog.html > ../blog/index.html
-
-# sed -i "" "s/{{blog_posts}}/$INSERTHTML/" ./index.html
+sed "s/{{blog_posts}}/$INSERTHTML/" ../templates/_blog.html > $OUTPUTDIRECTORY/blog/index.html
 
 # clean up temporary html fragments
 rm ../markdown/blog/*.html

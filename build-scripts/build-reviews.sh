@@ -1,5 +1,7 @@
 #!/bin/zsh
 
+OUTPUTDIRECTORY=$1
+
 echo "    building reviews..."
 
 ## generate html fragments from md files
@@ -45,7 +47,7 @@ for file in ../markdown/reviews/*/*.md; do
     pandoc $file -f gfm -t HTML >> $NEWFILE
 done
 
-# insert generated html into index.html
+# insert generated html into reviews.html
 
 INSERTHTML="<!-- BEGIN converted .md from /markdown/reviews/ -->"
 
@@ -71,7 +73,7 @@ INSERTHTML+="</section><!-- END converted .md from /markdown/reviews/ -->"
 # escape special characters in the html for use in sed below
 INSERTHTML=$(./escape-html.sh $INSERTHTML)
 
-sed s/{{review_posts}}/$INSERTHTML/ ../templates/_reviews.html > ../reviews.html
+sed s/{{review_posts}}/$INSERTHTML/ ../templates/_reviews.html > $OUTPUTDIRECTORY/reviews.html
 
 # clean up temporary html fragments
 rm ../markdown/reviews/*/*.html
