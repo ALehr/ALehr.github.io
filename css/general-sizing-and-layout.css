@@ -47,3 +47,9 @@ img {
 .rating, .author {
     margin: 0;
 }
+
+iframe {
+	width: 100%;
+	height: auto;
+	aspect-ratio: 16/9;
+}
